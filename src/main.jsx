@@ -9,11 +9,11 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppContextProvider } from './Context/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
- <AppContextProvider>
+<BrowserRouter>
+  <AppContextProvider>
     <App />
   </AppContextProvider>
   
-  </BrowserRouter>
+</BrowserRouter>
 
 )
