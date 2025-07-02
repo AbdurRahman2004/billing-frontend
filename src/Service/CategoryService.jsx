@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-export const addCategory = async() => {
+export const addCategory = async(category) => {
   return await  axios.post('http://localhost:8080/api/v1.0/categories',category)
 }
 
