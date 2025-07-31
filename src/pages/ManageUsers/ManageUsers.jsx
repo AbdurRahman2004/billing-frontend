@@ -7,7 +7,7 @@ import toast from 'react-hot-toast'
 
 const ManageUsers = () => {
   
-  const [users, setUsers] = useState(false);
+  const [users, setUsers] = useState([]);
   const [loading , setLoading] = useState(false);
 
   useEffect(()=>{

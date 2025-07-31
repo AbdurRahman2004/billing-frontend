@@ -1,17 +1,22 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { fetchCategories } from '../Service/CategoryService.jsx';
+import { fetchItems } from '../Service/ItemService.jsx';
 
 export const AppContext = createContext(null); // ✅ named export
 
 export const AppContextProvider = (props) => {
   const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
+
   const [auth , setAuth] = useState({token: null , role: null});
 
 
   useEffect(() => {
     async function loadData() {
-      const response = await fetchCategories();
-      setCategories(response.data);
+      const categoryResponse = await fetchCategories();
+      const itemResponse = await fetchItems()
+      setItems(itemResponse.data)
+      setCategories(categoryResponse.data);
     }
     loadData();
   }, []);
@@ -25,7 +30,9 @@ export const AppContextProvider = (props) => {
     categories,
     setCategories,
     setAuthData,
-    auth
+    auth,
+    items,
+    setItems
   };
 
   return (
