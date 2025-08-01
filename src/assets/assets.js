@@ -1,4 +1,5 @@
 import login from "./background.jpg"
+import profile from "./profile.jpg"
 
 export const assets = {
   logo: "https://www.svgrepo.com/show/303109/adobe-xd-logo.svg",
@@ -11,4 +12,5 @@ export const assets = {
   manageItemsIcon: "https://www.svgrepo.com/show/303109/adobe-xd-logo.svg",
   manageCategoriesIcon: "https://www.svgrepo.com/show/303109/adobe-xd-logo.svg",
   login,
+  profile
 };

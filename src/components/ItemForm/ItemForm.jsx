@@ -7,7 +7,7 @@ import { addItem } from '../../Service/ItemService.jsx';
 
 const ItemForm = () => {
       
-    const {categories , setItems , items} = useContext(AppContext)
+    const {categories , setItems , items , setCategories} = useContext(AppContext)
     const [image , setImage] = useState(false);
     const [loading , setLoading] = useState(false);
     const [data , setData] = useState({
@@ -38,7 +38,8 @@ const ItemForm = () => {
           console.log(response.status)
           if(response.status == 200){
             setItems([...items , response.data])
-            // TODO update the category state
+            
+            setCategories((prevCategory) => prevCategory.map((category)=> category.categoryId === data.categoryId ? {...category, items: category.items+ 1}: category))
             toast.success("Item added")
             setData({
                 name: "",
