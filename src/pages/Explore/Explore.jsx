@@ -39,7 +39,12 @@ const Explore = () => {
       </div>
         <hr className='my-3 text-light' />
       <div className="cart-summary-conatiner" style={{height: '30%'}}>
-         <CartSummary />
+         <CartSummary
+             customerName={customerName}
+             mobileNumber={mobileNumber}
+             setMobileNumber={setMobileNumber}
+             setCustomerName={setCustomerName}         
+         />
       </div>
     </div>
    </div>
